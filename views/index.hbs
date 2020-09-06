@@ -1,1 +1,18 @@
 <h2>Index Page</h2>
+<div class="main_block">
+{{#if users.length}}
+    <ul>
+    {{#each users}}
+    <form action="/post" method="POST">
+        <li>
+            <input type="hidden" value="{{_id}}" name="id">
+            {{name}}
+        </li>
+        <button class="btn">Delete</button>
+    </form>
+    {{/each}}
+    </ul>
+{{else}}
+    </div>
+<p>No users</p>
+{{/if}}
